@@ -10,7 +10,7 @@ const ArtistsGrid = ({ artists }) => {
               <li className="grid__item" key={i}>
                 <div className="grid__item__inner">
                   {artist.images[0] && (
-                    <div className="grid_item_img">
+                    <div className="grid__item__img">
                       <img src={artist.images[0].url} alt={artist.name} />
                     </div>
                   )}
