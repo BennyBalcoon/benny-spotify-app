@@ -143,3 +143,12 @@ export const getCurrentUserPlaylists = (limit = 20) => {
 export const getTopArtists = (time_range = "long_term") => {
   return axios.get(`/me/top/artists?time_range=${time_range}`);
 };
+
+/**
+ * Get a User's Top Tracks
+ * same as Top Artists
+ */
+
+export const getTopTracks = (time_range = "long_term") => {
+  return axios.get(`/me/top/tracks?time_range=${time_range}`);
+};
