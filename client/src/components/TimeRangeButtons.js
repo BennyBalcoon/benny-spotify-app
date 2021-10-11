@@ -1,6 +1,8 @@
+import { StyledRangeButtons } from "../styles";
+
 const TimeRangeButtons = ({ activeRange, setActiveRange }) => {
   return (
-    <ul>
+    <StyledRangeButtons>
       <li>
         <button className={activeRange === "short" ? "active" : ""} onClick={() => setActiveRange("short")}>
           This Month
@@ -16,7 +18,7 @@ const TimeRangeButtons = ({ activeRange, setActiveRange }) => {
           All Time
         </button>
       </li>
-    </ul>
+    </StyledRangeButtons>
   );
 };
 
