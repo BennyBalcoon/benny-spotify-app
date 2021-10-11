@@ -140,7 +140,7 @@ export const getCurrentUserPlaylists = (limit = 20) => {
  * @param {string} time_range - 'short_term' (last 4 weeks) 'medium_term' (last 6 months) or 'long_term' (calculated from several years of data and including all new data as it becomes available). Defaults to 'short_term'
  */
 
-export const getTopArtists = (time_range = "long_term") => {
+export const getTopArtists = (time_range = "short_term") => {
   return axios.get(`/me/top/artists?time_range=${time_range}`);
 };
 
@@ -149,6 +149,6 @@ export const getTopArtists = (time_range = "long_term") => {
  * same as Top Artists
  */
 
-export const getTopTracks = (time_range = "long_term") => {
+export const getTopTracks = (time_range = "short_term") => {
   return axios.get(`/me/top/tracks?time_range=${time_range}`);
 };
