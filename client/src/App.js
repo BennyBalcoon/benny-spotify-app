@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, useLocation } from "react-route
 import { accessToken, logout, getCurrentUserProfile } from "./spotify";
 import { catchErrors } from "./utils";
 import { GlobalStyle } from "./styles";
-import { Login, Profile, TopArtists, TopTracks } from "./pages";
+import { Login, Profile, TopArtists, TopTracks, Playlists, Playlist } from "./pages";
 import styled from "styled-components/macro";
 
 const StyledLogoutButton = styled.button`
@@ -70,10 +70,10 @@ function App() {
                   <TopTracks />
                 </Route>
                 <Route path="/playlists/:id">
-                  <h1>Playlist</h1>
+                  <Playlist />
                 </Route>
                 <Route path="/playlists">
-                  <h1>Playlists</h1>
+                  <Playlists />
                 </Route>
                 <Route path="/">
                   <Profile />

@@ -152,3 +152,23 @@ export const getTopArtists = (time_range = "short_term") => {
 export const getTopTracks = (time_range = "short_term") => {
   return axios.get(`/me/top/tracks?time_range=${time_range}`);
 };
+
+/**
+ * Get a Playlist
+ * @param {string} playlist_id
+ * @return {Promise}
+ */
+
+export const getPlaylistById = (playlist_id) => {
+  return axios.get(`/playlists/${playlist_id}`);
+};
+
+/**
+ * Get Audio Features for sevral Tracks
+ * @param {string} ids - A comma-separated list of Spotify IDs for the tracks
+ * @return {Promise}
+ */
+
+export const getAudioFeaturesForTracks = (ids) => {
+  return axios.get(`/audio-features?ids=${ids}`);
+};
