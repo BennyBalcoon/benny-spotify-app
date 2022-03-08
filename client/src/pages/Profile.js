@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { catchErrors } from "../utils";
 import { getCurrentUserProfile, getCurrentUserPlaylists, getTopArtists, getTopTracks } from "../spotify";
-import { ArtistsGrid, SectionWrapper, TrackList, PlaylistsGrid } from "../components";
+import { ArtistsGrid, SectionWrapper, TrackList, PlaylistsGrid, Loader } from "../components";
 import { StyleHeader } from "../styles";
 
 const Profile = () => {
@@ -30,7 +30,7 @@ const Profile = () => {
 
   return (
     <>
-      {profile && (
+      {profile ? (
         <StyleHeader type="user">
           <div className="header__inner">
             {profile.images.length && profile.images[0].url && (
@@ -52,6 +52,8 @@ const Profile = () => {
             </div>
           </div>
         </StyleHeader>
+      ) : (
+        <Loader />
       )}
 
       {topArtists && topTracks && playlists && (
